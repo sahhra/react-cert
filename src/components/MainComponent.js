@@ -10,6 +10,7 @@ import Home from "./HomeComponent";
 import Menu from "./MenuComponent";
 import Contact from "./ContactComponent";
 import DishDetail from "./DishdetailComponent";
+import About from "./AboutComponent";
 
 class Main extends Component {
   constructor(props) {
@@ -56,6 +57,10 @@ class Main extends Component {
         <Switch>
           <Route exact path="/home" component={() => <HomePage />} />
           <Route path="/contactus" component={Contact} />
+          <Route
+            path="/aboutus"
+            component={() => <About leaders={leaders} />}
+          />
           <Route path="/menu/:dishId" component={DishWithId} />
           <Route
             excat
