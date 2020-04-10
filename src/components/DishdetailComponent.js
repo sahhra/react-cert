@@ -43,15 +43,17 @@ class DishDetail extends Component {
 
   render() {
     const { dish } = this.props;
-
-    const comments = dish !== null ? dish.comments : null;
+    console.log(dish);
+    const comments = dish !== null && dish !== undefined ? dish.comments : null;
 
     return (
-      <div className="row">
-        <div className="col-12 col-md-5 m-1">{this.renderDish(dish)}</div>
-        <div className="col-12 col-md-5 m-1">
-          {comments !== null && <h4>Comments</h4>}
-          {this.renderComments(comments)}
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-5 m-1">{this.renderDish(dish)}</div>
+          <div className="col-12 col-md-5 m-1">
+            {comments !== null && <h4>Comments</h4>}
+            {this.renderComments(comments)}
+          </div>
         </div>
       </div>
     );
